@@ -77,6 +77,8 @@ Now we have to escalate our privileges. This is the part that took me the longes
 Then I quickly upgraded my shell using `python -c 'import pty; pty.spawn("/bin/bash")'`
 I couldnt touch any of the user accounts and I most definately didnt have root access. So, I decided to go to `/tmp` and see if I could place any files in there.
 A quick `touch 1.txt` inside the directory, confirmed that I could. So, I went and grabbed a copy of linenum.sh, and saved it into my local directory where I was keeping all of the information about this box (nmap scans, notes, exploit code, etc.). 
+**Note:** staying organized durring engagements is incredibly important. What I often do is create a subdirectory within my home directory and just work out of that the whole time. This helps keep everything organized and lets me refer back to things later if needed.
+
 
 On my machine:
 
@@ -92,6 +94,7 @@ On target machine:
 
 Unfortunately I didnt get much information out of that, but I got enough. Which allowed me to go and search for an exploit to escalate my privileges.
 
+![S](Images/linenumOutput.png)
 
 ## Box 2
 ![S](Images/nmap2_1.png)
