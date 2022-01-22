@@ -108,7 +108,7 @@ The server defaults to port 8000, so on the target machine (in /tmp) I ran `wget
 
 ![S](Images/exploitcopy.png)
 
-Finally, its time to compile and exploit. This can all be done with one single command by to using the gcc compiler on 9545.c and outputting to another file called 9545. Then using `&&` I run the new 9545 file after the compiling is completed.  
+Finally, its time to compile and exploit. This can all be done with one single command by to using the gcc compiler on 9545.c and outputting to another file called 9545. Then using `&&` to run the new 9545 file after the compiling is completed.  
 
 The final command looks like this: `$ gcc 9545.c -o 9545 && ./9545`
 
@@ -121,4 +121,6 @@ I had a great time with this exercise. It was a good way to get some practice wi
 
 Any questions? Feel free to contact me via email: jwautry93@gmail.com you can also reach out to me on linkedin.
 
-**Thanks for reading**
+**Thanks for reading!**
+
+-J
