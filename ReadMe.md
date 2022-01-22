@@ -31,9 +31,13 @@ I start by enumerating all 3 of the obtained IP addresses using [@dievus'](https
 Anyway's, back to port scanning starting with...
 ## Box 1
 ![S](Images/nmap1.png)
+
 Going for the lowhanging fruit (and the best option here), I decide to go check out the website on `port 8080`. Im greeted with a basic admin login page with the url extension `index.php`. This lets gives me an idea that I may be able to preform an sql injection but Im still not sure.
+
 ![S](Images/phpAdminPage.png)
+
 So, I fire up BurpSuite and check out whats happening when i hit the login button.
+
 ## Box 2
 ![S](Images/nmap2_1.png)
 #### Box 2 pt.2
