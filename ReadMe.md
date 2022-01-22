@@ -50,9 +50,19 @@ Maybe like, a common administrator name like `admin` along with `'OR '1'='1` Wha
 ![S](Images/burping3.png)
 
 #### It worked!!!
-Then I just take that and plug it into the username field on the actual site and I should be taken to the administrative console..
+Then I just take that same text `admin' OR '1'='1` and plug it into the username field on the actual site and I should be taken to the administrative console..
 
 ![S](Images/adminConsole.png)
+
+Awesome, now we can probably use this ping page to get a shell into the actual machine. So, lets figure out how to do that.
+First i typed an IP `127.0.0.1` into the field and got a pretty generic response. 
+Sure that it was pinging, I tried to see if I could piggyback on that ping command using the semicolon
+
+So I pinned a Print Working Directory command the end of that local host ping `127.0.0.1;pwd` and got something better.
+
+![S](Images/Localpwd.png)
+
+
 
 ## Box 2
 ![S](Images/nmap2_1.png)
