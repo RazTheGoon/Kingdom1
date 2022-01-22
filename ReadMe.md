@@ -37,7 +37,9 @@ Going for the lowhanging fruit (and the best option here), I decide to go check 
 ![S](Images/phpAdminPage.png)
 
 So, I fire up BurpSuite and check out whats happening when i hit the login button.
+
 ![S](Images/burping.png)
+
 Ok there's probably something here. 
 Lets send this to the repeater module in Burp and check out whats going on. `ctrl+R` is a quick shortcut for moving requests from the Proxy tab into the Repeater Tab. Here, we can manipulate our requests for testing the right sort of attack.
 Im focusing on the bottom line of this request, as this is where our username and password data goes. I added a single character in the username field and got this response back.
