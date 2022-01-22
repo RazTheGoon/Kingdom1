@@ -1,5 +1,5 @@
 # Keys to the Kingdom
-A in depth walkthrough of how I solved a fairly realistic exercise one of my instructors gave me. This exercise was loads of fun and kept me entertained for quite a while with all of its little rabbit holes and misdirects.
+A in depth walkthrough of how I solved a fairly realistic exercise one of my instructors put to me. This exercise was loads of fun and kept me entertained for quite a while with all of its little rabbit holes and misdirects.
 
 ### It begins...
 This is how it started, with a post from an instructor of mine in our class' Teams channel. "Find the 'Keys' To the Kingdom", he said and then posted a link to a file on google drive along with 3 IP addresses.
