@@ -98,7 +98,7 @@ Unfortunately I didnt get much information out of that, but I got enough. Which 
 
 ![S](Images/linenumOutput.png)
 
-#### The Final Stage
+## The Final Stage
 
 Now that the OS and Kernel version are both confirmed, its a good time to go search for a relevant exploit. I chose to use searchsploit for this on my KaliBox.. 
 
@@ -117,7 +117,7 @@ The final command looks like this: `$ gcc 9545.c -o 9545 && ./9545`
 ![S](Images/rootaccess.png)
 **We have root**
 
-### Final thoughts on this first box
+## Final thoughts on this first box
 
 I had a great time with this exercise. It was a good way to get some practice with linux privlige escalation exploits that I dont often get. Most of my experience with linux priv esc comes in the form of exploiting cronjobs or suid permissions. So, needless to say this was a welcome change of pace for me. 
 
