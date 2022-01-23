@@ -6,7 +6,7 @@ Shout out to [@Kyzen-gmg](https://github.com/Kyzen-gmg)  for the range and givin
 ### It begins...
 This is how it started, with a post from an instructor of mine in our class’s Teams channel. "Find the 'Keys' To the Kingdom", he said and then posted a link to a file on google drive along with 3 IP addresses.
 
-![S](Images/TheBegining.png)
+![S](Images/TheBegining1.png)
 #### So we have a couple of clues. 
 From just that introduction, I noticed a couple of things that could give me an idea on where to go with this.
 1. Keys. I wonder what sort of keys he’s talking about? 
