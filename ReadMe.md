@@ -119,7 +119,7 @@ The final command looks like this: `$ gcc 9545.c -o 9545 && ./9545`
 
 ## Final thoughts on this first box
 
-I had a great time with this exercise. It was a good way to get some practice with Linux privilege escalation exploits that I don’t often get. Most of my experience with Linux priv esc comes in the form of exploiting cronjobs or SUID permissions. So, needless to say this was a welcome change of pace for me and while th. 
+I had a great time with this exercise. It was a good way to get some practice with Linux privilege escalation exploits that I don’t often get. Most of my experience with Linux priv esc comes in the form of exploiting cronjobs or SUID permissions. So, needless to say this was a welcome change of pace for me. 
 
 Any questions? Feel free to contact me via email: jwautry93@gmail.com you can also reach out to me on my [LinkedIn](https://www.linkedin.com/in/jwautry/) 
 
