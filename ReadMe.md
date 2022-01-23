@@ -12,7 +12,7 @@ From just that introduction, I noticed a couple of things that could give me an 
 1. Keys. I wonder what sort of keys he’s talking about? 
 It could be a VPN key hidden in that packet capture, but it could also be an SSH key, or knowing him, it could be a misdirection. 
 
-2. Our second clue comes from 2 of those IP's they are one after another in sequence. So it stands to reason they are on the same subnet and can only be accessed via this hypothetical VPN. \
+2. Our second clue comes from 2 of those IP's they are one after another in sequence. So it stands to reason they are on the same subnet and can only be accessed via this hypothetical VPN. 
 
 #### Well only one way to find out! Lets open that pcap in Wireshark.
 
