@@ -115,6 +115,7 @@ Finally, its time to compile and exploit. This can all be done with one single c
 The final command looks like this: `$ gcc 9545.c -o 9545 && ./9545`
 
 ![S](Images/rootaccess.png)
+
 **ROOT ACHIEVED**
 
 ## Final thoughts on this first box
